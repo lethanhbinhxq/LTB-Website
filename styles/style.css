@@ -1,0 +1,255 @@
+body {
+    background-color: #f3e3ff;
+    font-size: 100%;
+    color: #333333;
+    font-family: "Poppins", sans-serif;
+}
+
+p {
+    font-size: 1.02em;
+}
+
+.bg-main-pink {
+    background-color: #FA4EAB !important;
+}
+
+.text-main-pink {
+    color: #FA4EAB !important;
+}
+
+.text-secondary-pink {
+    color: #FE83C6 !important;
+}
+
+.text-orange {
+    color: #FF8F00 !important;
+}
+
+.footer-text {
+    color: white !important;
+}
+
+.footer-text:hover,
+.footer-text:focus,
+.footer-text:active {
+    color: #FA4EAB !important;
+}
+
+.footer-title:hover,
+.footer-title:focus,
+.footer-title:active {
+    color: #ff0088 !important;
+}
+
+.custom-page-link:focus {
+    background-color: #E1AEFF !important;
+    color: white;
+    box-shadow: 0 0 0 0.2rem #FA4EAB;
+}
+
+.custom-page-link:hover {
+    background-color: #E1AEFF !important;
+    color: white;
+}
+
+.custom-page-link {
+    color: #FA4EAB;
+    background-color: white;
+}
+
+.pagination .active .custom-page-link {
+    background-color: #FA4EAB;
+    color: white;
+    cursor: default;
+    border: 1px solid #FA4EAB;
+}
+
+.bg-purple {
+    background-color: #E1AEFF !important;
+}
+
+.custom-search {
+    width: 20em;
+    /* height: 40% !important; */
+    background-color: white !important;
+    border-color: #ff99cc !important;
+}
+
+.custom-search-number {
+    background-color: white !important;
+}
+
+.custom-search-number:not(:placeholder-shown) {
+    background-color: #d5ffff;
+    border-color: #ff99cc !important;
+}
+
+#searchByText {
+    display: block;
+}
+
+#searchByNumber {
+    display: none;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    border-radius: 12px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:active {
+    color: #cc00ff;
+    background-color: #FFBDF7;
+    border-radius: 12px;
+}
+
+
+.btn-outline-secondary {
+    color: #ff99cc;
+    border-color: #ff99cc;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #FA4EAB;
+    color: white;
+}
+
+.btn-outline-secondary:focus {
+    box-shadow: 0 0 0 0.2rem #ff99cc;
+    background-color: #ff1d8e !important;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #FA4EAB;
+    border-color: #FA4EAB !important;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #FE83C6;
+    border-color: #FE83C6 !important;
+    color: white;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem #ff99cc;
+    background-color: #ff1d8e;
+    border-color: #ff6699 !important;
+    color: white;
+}
+
+.btn-primary:active {
+    box-shadow: 0 0 0 0.2rem #ff99cc;
+    background-color: #ff1d8e !important;
+    border-color: #ff6699 !important;
+    color: white;
+}
+
+.border-primary {
+    border: none !important;
+    border-top: 6px double #FA4EAB !important;
+    border-color: #ff6699;
+    margin: 20px 0 !important;
+    width: 100% !important;
+}
+
+.price {
+    color: #ff1d8e !important;
+}
+
+.card {
+    aspect-ratio: 4 / 3;
+    margin-bottom: 3rem;
+}
+
+.product-card {
+    box-shadow: 8px 8px #E1AEFF;
+    border-color: white;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    border: 5px solid #FA4EAB;
+}
+
+.short-divider {
+    width: 50%;
+    border: 5px dashed #FA4EAB;
+    margin: 0 auto;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu-purple {
+    text-align: left;
+    background-color: #dda3ff;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #fc2eff;
+    color: white;
+}
+
+#usernameDisplay {
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #fff7dd;
+    border-color: #ffc078;
+}
+
+.form-control:focus,
+.form-control:active {
+    border: none;
+    box-shadow: 0 0 0 0.2rem #ff1d8e;
+    background-color: #fff7dd;
+}
+
+.form-control:not(:placeholder-shown) {
+    background-color: #d5ffff;
+    border-color: #fff34a;
+}
+
+.form-select {
+    background-color: #fff7dd;
+    border-color: #ffc078;
+}
+
+.form-select:focus,
+.form-select:active {
+    border: none;
+    box-shadow: 0 0 0 0.2rem #ff1d8e;
+    background-color: #fff7dd;
+}
+
+.valid {
+    color: green;
+}
+
+.valid:before {
+    content: "✔";
+    margin-right: 5px;
+}
+
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    content: "✖";
+    margin-right: 5px;
+}
+
+.form-check-input {
+    border-width: 0.15em;
+}
