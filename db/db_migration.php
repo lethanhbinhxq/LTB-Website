@@ -247,22 +247,22 @@ try {
     //     $stmt->close();
     // }
 
-    // // Function to update multiple products
-    // function updateProducts($conn, $products)
-    // {
-    //     $stmt = $conn->prepare("UPDATE products SET product_name = ?, description_ = ?, price = ?, quantity = ? WHERE id = ?");
-    //     if (!$stmt) {
-    //         throw new Exception("Error preparing statement: {$conn->error}");
-    //     }
+    // Function to update multiple products
+    function updateProducts($conn, $products)
+    {
+        $stmt = $conn->prepare("UPDATE products SET product_name = ?, description_ = ?, price = ?, quantity = ? WHERE id = ?");
+        if (!$stmt) {
+            throw new Exception("Error preparing statement: {$conn->error}");
+        }
 
-    //     foreach ($products as $product) {
-    //         $stmt->bind_param("ssdii", $product['product_name'], $product['description'], $product['price'], $product['quantity'], $product['id']);
-    //         if (!$stmt->execute()) {
-    //             throw new Exception("Error updating product ID {$product['id']}: {$stmt->error}");
-    //         }
-    //     }
-    //     $stmt->close();
-    // }
+        foreach ($products as $product) {
+            $stmt->bind_param("ssdii", $product['product_name'], $product['description'], $product['price'], $product['quantity'], $product['id']);
+            if (!$stmt->execute()) {
+                throw new Exception("Error updating product ID {$product['id']}: {$stmt->error}");
+            }
+        }
+        $stmt->close();
+    }
 
     // // Update user (Nikki)
     // $usersToUpdate = [

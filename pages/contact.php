@@ -25,12 +25,12 @@
 
         <div class="col-md-5">
             <div class="h-100">
-                <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/map.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/contact_map.php'; ?>
             </div>
         </div>
 
         <div class="col-md-3">
-            <h2 class="text-center text-main-pink">Contacts</h2>
+            <h3 class="text-center fw-bold text-main-pink">Contacts</h3>
             <ul class="list-unstyled text-start bg-white rounded px-3 py-3">
                 <li>
                     <button class="btn btn-primary rounded-circle m-1" type="submit" aria-label="Search">
@@ -63,12 +63,17 @@
                     <h4 class="text-main-pink">Location</h4>
                     <div>
                         <i class="bi bi-geo-alt-fill text-orange" style="font-size: larger"></i>
-                        268 Ly Thuong Kiet, Ward 14, District 10, HCM
+                        268 Ly Thuong Kiet, Ward 14, Distric 10, HCM City
                     </div>
 
                     <div>
                         <i class="bi bi-geo-alt-fill text-orange" style="font-size: larger"></i>
-                        11 Su Van Hanh, Ward 12, District 10, HCM
+                        30 Tan Thang, Son Ky Ward, Tan Phu District, HCM City
+                    </div>
+
+                    <div>
+                        <i class="bi bi-geo-alt-fill text-orange" style="font-size: larger"></i>
+                        302 Dien Bien Phu, Ward 17, Binh Thanh District, HCM City
                     </div>
                 </div>
 

@@ -51,3 +51,61 @@ function insertUsers($pdo, $users)
     // Return the inserted users with their IDs
     return $insertedUsers;
 }
+
+function insertProducts($pdo, $products)
+{
+    $sql = "INSERT INTO products (product_name, description_, category, price, quantity) 
+            VALUES (:product_name, :description, :category, :price, :quantity)";
+
+    $stmt = $pdo->prepare($sql);
+    if (!$stmt) {
+        throw new Exception("Error preparing statement: " . implode(", ", $pdo->errorInfo()));
+    }
+
+    foreach ($products as $product) {
+        $stmt->execute([
+            ':product_name' => $product['product_name'],
+            ':description' => $product['description'],
+            ':category' => $product['category'],
+            ':price' => $product['price'],
+            ':quantity' => $product['quantity']
+        ]);
+    }
+}
+
+function updateProducts($pdo, $products)
+{
+    $sql = "UPDATE products SET product_name = :product_name, description_ = :description, category = :category, price = :price, quantity = :quantity WHERE id = :id";
+
+    $stmt = $pdo->prepare($sql);
+    if (!$stmt) {
+        throw new Exception("Error preparing statement: " . implode(", ", $pdo->errorInfo()));
+    }
+
+    foreach ($products as $product) {
+        $stmt->execute([
+            ':id' => $product['id'],
+            ':product_name' => $product['product_name'],
+            ':description' => $product['description'],
+            ':category' => $product['category'],
+            ':price' => $product['price'],
+            ':quantity' => $product['quantity']
+        ]);
+    }
+}
+
+function deleteProducts($pdo, $products)
+{
+    $sql = "DELETE FROM products WHERE id = :id";
+
+    $stmt = $pdo->prepare($sql);
+    if (!$stmt) {
+        throw new Exception("Error preparing statement: " . implode(", ", $pdo->errorInfo()));
+    }
+
+    foreach ($products as $product) {
+        $stmt->execute([
+            ':id' => $product['id']
+        ]);
+    }
+}

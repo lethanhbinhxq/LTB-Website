@@ -1,8 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
+// Function to initialize modal functionality for product cards
+function createProductModal() {
     const productCards = document.querySelectorAll('.product-card');
 
     productCards.forEach(card => {
         card.addEventListener('click', function () {
+            const productId = card.getAttribute('data-product-id');
             const productName = card.getAttribute('data-product-name');
             const productCategory = card.getAttribute('data-product-category');
             const productDescription = card.getAttribute('data-product-description');
@@ -18,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (modal && modalName && modalCategory && modalDescription && modalPrice && modalQuantity) {
                 // Populate the modal with product details
+                modal.setAttribute('data-product-id', productId);
                 modalName.textContent = productName;
                 modalCategory.textContent = productCategory;
                 modalDescription.textContent = productDescription;
@@ -32,4 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    createProductModal();
 });

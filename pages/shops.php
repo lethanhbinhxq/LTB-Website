@@ -4,7 +4,7 @@
     <!-- The map goes here -->
     <div class="row justify-content-center text-center">
 
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/map.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/shop_map.php'; ?>
 
     </div>
 

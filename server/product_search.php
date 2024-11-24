@@ -1,5 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/components/product_card.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/components/product_modal.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/db/db_connection.php';
 
 $searchTerm = isset($_GET['keyword']) ? trim($_GET['keyword']) : '';
@@ -42,11 +43,16 @@ $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if (!empty($products)) {
+// Check if it's the first page and there are no results
+if ($page === 1 && empty($products)) {
+    // For the first page, we return a "No products found" message
+    echo "<h4>No products found.</h4>";
+} elseif (empty($products)) {
+    // If it's any page other than the first and no results are found, just return an empty response
+    echo "";
+} else {
+    // If products are found, render each product card
     foreach ($products as $product) {
         renderProductCard($product); // Render each product card
     }
-} else {
-    // Optionally return a message if no products are found
-    echo "<h4>No more products found.</h4>";
 }

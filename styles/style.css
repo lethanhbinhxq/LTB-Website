@@ -147,6 +147,32 @@ p {
     color: white;
 }
 
+.btn-secondary {
+    background-color: #05e1f6;
+    border-color: #05e1f6 !important;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #40e3ca;
+    border-color: #40e3ca !important;
+    color: white;
+}
+
+.btn-secondary:focus {
+    box-shadow: 0 0 0 0.2rem #77E4C8;
+    background-color: #36C2CE !important;
+    border-color: #36C2CE !important;
+    color: white;
+}
+
+.btn-secondary:active {
+    box-shadow: 0 0 0 0.2rem #77E4C8;
+    background-color: #36C2CE !important;
+    border-color: #36C2CE !important;
+    color: white;
+}
+
 .border-primary {
     border: none !important;
     border-top: 6px double #FA4EAB !important;
@@ -252,4 +278,8 @@ p {
 
 .form-check-input {
     border-width: 0.15em;
+}
+
+ul#storeList {
+    list-style-type: none;
 }

@@ -1,5 +1,5 @@
-<script src="../scripts/product_modal.js"></script>
 <script src="../scripts/lazy_loading.js"></script>
+<script src="../scripts/product_modal.js"></script>
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/components/product_modal.php';
@@ -10,12 +10,11 @@ function renderProductCard($product)
     $category = htmlspecialchars($product['category']);
     $price = htmlspecialchars($product['price']);
     $description = htmlspecialchars($product['description_'] ?? '');
-    $quantity = htmlspecialchars($product['quantity'] ?? '');
+    $quantity = htmlspecialchars($product['quantity']);
 
     echo "
     <div class='col-sm-3'>
-        <div class='card product-card' data-product-id='" . htmlspecialchars($product['id']) . "'
-             data-product-name='$name' data-product-category='$category' data-product-description='$description' 
+        <div class='card product-card' data-product-id='" . htmlspecialchars($product['id']) . "' data-product-name='$name' data-product-category='$category' data-product-description='$description' 
              data-product-price='$price' data-product-quantity='$quantity'>
             <div class='container-fluid p-5 bg-purple' style='height: 100%;'></div>
             <div class='card-body'>
@@ -49,11 +48,22 @@ function displayProducts($pdo, $limit = 8)
 
     if ($category) {
         echo "
-        <div class='d-flex align-items-center'>
-            <hr class='short-divider'>
-            <h2 class='text-center fw-bold text-secondary-pink'>$category</h2>
-            <hr class='short-divider'>
-        </div>";
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categoryHolder = document.getElementById('categoryHolder');
+            const categoryText = document.getElementById('categoryText');
+
+            if (categoryHolder && categoryText) {
+                " . (!empty($category) ? "
+                categoryHolder.style.display = 'flex'; // Show the element
+                categoryText.innerHTML = '" . addslashes($category) . "'; // Update the text
+                " : "
+                categoryHolder.style.display = 'none'; // Hide the element if no category is provided
+                ") . "
+            }
+        });
+    </script>";
+
     }
 
     echo "<div class='my-3'></div>";
@@ -63,7 +73,9 @@ function displayProducts($pdo, $limit = 8)
     }
     echo "</div>";
 
-    addPagination($pdo, $limit, $category, $currentPage);
+    if ($limit >= 8) {
+        addPagination($pdo, $limit, $category, $currentPage);
+    }
 }
 
 function addPagination($pdo, $limit, $category, $currentPage)
